@@ -4,4 +4,5 @@ agendamentos**
 possibilidades_de_filtros**
 .venv**
 credencial**
-query**
+query_proposta.sql
+query_base_feggow.sql
