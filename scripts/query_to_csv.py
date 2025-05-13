@@ -12,7 +12,10 @@ oracledb.init_oracle_client(lib_dir=r"C:\oracle\instantclient_23_8")
 
 # query
 SQL_QUERY = """
-select * from seu_bd.sua_table
+select
+    *
+from
+    schema.tb
 """
 
 # data de hoje
@@ -25,7 +28,7 @@ def fetch_to_csv(query: str, output_path: str):
     user     = os.getenv("ORACLE_USER")
     password = os.getenv("ORACLE_PASS")
     host     = os.getenv("ORACLE_HOST")
-    port     = os.getenv("ORACLE_PORT", "1521")
+    port     = os.getenv("ORACLE_PORT")
     service  = os.getenv("ORACLE_SERVICE")
 
     dsn = oracledb.makedsn(host, port, service_name=service)
