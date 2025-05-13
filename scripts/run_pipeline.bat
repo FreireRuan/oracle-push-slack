@@ -17,13 +17,10 @@ timeout /t 10 /nobreak > nul
 REM 5) Executa a query e salva o CSV
 python query_to_csv.py
 
-REM 6) Executa o script para enviar os dados para o Google Drive
-python upload_to_google_drive.py
-
-REM 7) Envia para o Slack
+REM 6) Envia para o Slack
 python send_to_slack.py
 
-REM 8) Fechar a VPN após tudo
+REM 7) Fechar a VPN após tudo
 taskkill /IM openvpn.exe /F
 
 exit /B 0
