@@ -1,8 +1,8 @@
-# AMEI-AGENDAMENTOS-PUSH-SLACK
+ # AMEI-AGENDAMENTOS-PUSH-SLACK
 
 ## 🎯 Objetivos
 
-Automatizar a coleta de dados de agendamentos do sistema AMEI (via banco Oracle acessado por VPN) e enviá-los periodicamente para um canal do Slack, em formato CSV, para facilitar o acompanhamento e simular os pacientes conforme a rotina operacional.
+Automatizar a coleta de dados de agendamentos do sistema (via banco Oracle acessado por VPN) e enviá-los periodicamente para um canal do Slack, em formato CSV, para facilitar o acompanhamento e simular os pacientes conforme a rotina operacional.
 
 ---
 
@@ -10,8 +10,7 @@ Automatizar a coleta de dados de agendamentos do sistema AMEI (via banco Oracle 
 
 1. Conectar via VPN a um Oracle Database  
 2. Executar uma query e exportar resultado em CSV  
-3. Enviar o CSV para uma pasta no Google Drive
-4. Mandar o evento para o canal no Slack
+3. Enviar o CSV para o Slack
 4. Encerrar a VPN ao final
 
 Tudo isso pode ser agendado no Windows Task Scheduler usando o script `run_pipeline.bat`.
@@ -33,7 +32,6 @@ amei-agendamentos-push-slack/
 ├── scripts/
 │ ├── connect_vpn.py # Conecta à VPN
 │ ├── extract_query.py # Executa a query Oracle e gera o CSV
-│ ├── upload_to_google_drive.py # Envia arquivo .csv para a pasta no Google Drive
 │ ├── push_to_slack.py # Envia o evento para o Slack
 │ └── main.py # Orquestra os scripts
 ├── .venv # Variáveis (não versionado)
